@@ -1,5 +1,6 @@
 package com.learn.netty.server.websocket;
 
+import com.learn.netty.server.initializer.WebSocketServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
@@ -25,7 +26,7 @@ public class WebSocketServer {
             ServerBootstrap server = new ServerBootstrap();
             server.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .childHandler(null);
+                    .childHandler(new WebSocketServerInitializer());
             ChannelFuture channelFuture = server.bind(SERVER_PORT).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
