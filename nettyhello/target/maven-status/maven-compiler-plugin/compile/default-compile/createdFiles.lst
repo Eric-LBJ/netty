@@ -1,3 +1,4 @@
 com\learn\netty\server\HelloServer.class
-com\learn\netty\server\service\handler\CustomHandler.class
 com\learn\netty\server\initializer\HelloServerInitializer.class
+com\learn\netty\server\websocket\WebSocketServer.class
+com\learn\netty\server\service\handler\CustomHandler.class
